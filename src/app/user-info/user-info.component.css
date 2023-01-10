@@ -1,0 +1,40 @@
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  margin-right: 350px;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.container {
+  display: flex;
+  padding: 80px;
+}
+
+.user-name {
+  font-size: 30px;
+  margin: 20px;
+}
+.card-info {
+  width: 500px;
+  height: 540px;
+  border: 2px black solid;
+  padding: 5px;
+  border-radius: 10px;
+}
+.card-item {
+  height: 30px;
+  border: 2px orange solid;
+  background-color: rgba(0, 255, 0, 0.2);
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+  gap: 20px;
+  font-size: 15px;
+  display: flex;
+}

@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="form">
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Nume</mat-label>
+      <input matInput placeholder="nume" [(ngModel)]="product.nume" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Categorie</mat-label>
+      <mat-select>
+        <mat-option
+          *ngFor="let cat of categories"
+          [value]="cat.id"
+          (onSelectionChange)="changeCategory(cat.id)"
+        >
+          {{ cat.nume }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Tip</mat-label>
+      <input matInput placeholder="Tip" [(ngModel)]="product.tip" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Adult/Junior</mat-label>
+      <mat-select
+        matNativeControl
+        [(ngModel)]="product.adultJunior"
+        (valueChange)="changeAdult($event)"
+      >
+        <mat-option value="true">Adult</mat-option>
+        <mat-option value="false">Junior</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Pret</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Pret"
+        [(ngModel)]="product.pret"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Activ</mat-label>
+      <mat-select matNativeControl (valueChange)="changeActiv($event)">
+        <mat-option value="true">Activ</mat-option>
+        <mat-option value="false">Inactiv</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="updateProduct()"
+    >
+      Submit
+    </button>
+    <br />
+    <button mat-raised-button color="primary" type="submit" (click)="goBack()">
+      Go Back
+    </button>
+  </div>
+</div>

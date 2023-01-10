@@ -1,0 +1,19 @@
+.container {
+  padding: 30px;
+}
+.product-row {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+  border: 2px purple solid;
+  padding: 5px;
+  width: 800px;
+  gap: 30px;
+  padding-left: 50px;
+  margin: 10px;
+}
+p {
+  text-align: center;
+  margin-top: 10px;
+}

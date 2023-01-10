@@ -1,0 +1,12 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

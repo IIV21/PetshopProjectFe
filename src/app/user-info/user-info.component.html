@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="user-info">
+    <label class="user-name"></label>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ user.nume }}</mat-label>
+      <input readonly matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ user.prenume }}</mat-label>
+      <input readonly matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ user.email }}</mat-label>
+      <input readonly matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ user.cnp }}</mat-label>
+      <input readonly matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ user.telefon }}</mat-label>
+      <input readonly matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>{{ user.adresa }}</mat-label>
+      <input readonly matInput />
+    </mat-form-field>
+  </div>
+  <div class="card-info">
+    <div *ngFor="let card of cards">
+      <div class="card-item">
+        <p>{{ card.id }}</p>
+        <p>{{ card.numarCard }}</p>
+        <p>{{ card.detinator }}</p>
+        <p>{{ card.cvv }}</p>
+      </div>
+    </div>
+  </div>
+</div>

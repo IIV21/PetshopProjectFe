@@ -1,0 +1,112 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>{{ user.nume }} {{ user.prenume }}</span>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+      *ngIf="user.administrator"
+      (click)="addProduct()"
+    >
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      *ngIf="user.administrator"
+      (click)="productStock()"
+    >
+      <mat-icon>share</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      *ngIf="user.administrator"
+      (click)="allCards()"
+    >
+      <mat-icon>card_membership</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      (click)="myCards()"
+    >
+      <mat-icon>supervised_user_circle</mat-icon>
+    </button>
+    <input
+      placeholder="Nume Produs"
+      class="filter-input"
+      [(ngModel)]="filterName"
+      (input)="filterProducts()"
+    />
+    <mat-form-field class="cat-select" appearance="fill">
+      <mat-label>Categorie</mat-label>
+      <mat-select
+        [(ngModel)]="selectedCategory"
+        name="category"
+        (selectionChange)="filterCategory()"
+      >
+        <mat-option *ngFor="let cat of categories" [value]="cat.id">
+          {{ cat.nume }}
+        </mat-option>
+        <mat-option [value]="0"> All </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      mat-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      (click)="allOrders()"
+    >
+      Toate Comenzile
+    </button>
+  </mat-toolbar>
+</p>
+<div class="main-body">
+  <div>
+    <mat-grid-list class="grid" cols="4" rowHeight="1:1">
+      <mat-grid-tile class="item" *ngFor="let product of products">
+        <button
+          class="remove-item"
+          (click)="removeItem(product)"
+          *ngIf="user.administrator"
+        >
+          -
+        </button>
+        <button
+          class="update-item"
+          (click)="updateItem(product)"
+          *ngIf="user.administrator"
+        >
+          i
+        </button>
+        <div class="card" (click)="addProductToCart(product)">
+          <p class="title">{{ product.nume }}</p>
+          <img src="{{ product.imagine }}" alt="" />
+          <p class="tip">{{ product.tip }}</p>
+          <p class="tip">{{ product.categorie.nume }}</p>
+          <p>Pret :{{ product.pret }}</p>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="cart-card">
+    <div class="cart-item" *ngFor="let products of shoppingCartProducts">
+      <p class="cart-field">Nume: {{ products.product.nume }}</p>
+      <p class="cart-field">Tip :{{ products.product.tip }}</p>
+      <p class="cart-field">Pret :{{ products.product.pret }}</p>
+      <p class="cart-field">Cantitate :{{ products.count }}</p>
+      <button (click)="removeProductFromCart(products)">X</button>
+    </div>
+    <label style="display: flex; flex-direction: row-reverse"
+      >Pretul Produselor : {{ totalValue }}</label
+    >
+
+    <button mat-button color="primary" (click)="buyCart()">Buy</button>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<div class="container">
+  <div [formGroup]="addProduct" class="form-group">
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Nume</mat-label>
+      <input matInput placeholder="nume" formControlName="nume" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Categorie</mat-label>
+      <mat-select
+        (valueChange)="changeCategory($event)"
+        formControlName="categorieId"
+      >
+        <mat-option *ngFor="let cat of categories" [value]="cat.id">
+          {{ cat.nume }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Tip</mat-label>
+      <input matInput placeholder="Tip" formControlName="tip" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Adult/Junior</mat-label>
+      <mat-select matNativeControl formControlName="adultJunior">
+        <mat-option value=true>Adult</mat-option>
+        <mat-option value=false>Junior</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Pret</mat-label>
+      <input type="text" matInput placeholder="Pret" formControlName="pret" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Imagine</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Imagine"
+        formControlName="imagine"
+      />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="addNewProduct()"
+      [disabled]="!this.addProduct.valid"
+    >
+      Submit
+    </button>
+    <br>
+    <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    (click)="goBack()"
+      >
+    Go Back
+  </button>
+  </div>
+</div>

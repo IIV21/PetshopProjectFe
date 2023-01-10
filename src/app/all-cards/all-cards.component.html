@@ -1,0 +1,19 @@
+<div class="page">
+  <p>
+    <mat-toolbar color="primary">
+      <span>All Cards Of All Users</span>
+    </mat-toolbar>
+  </p>
+  <div class="container">
+    <div class="grid" cols="1" rowHeight="90:2">
+      <div class="item" *ngFor="let card of cards">
+        <div class="r1">
+          <p>Detinator: {{ card.detinator }}</p>
+          <p>Email: {{ card.email }}</p>
+          <p>Telefon: {{ card.telefon }}</p>
+        </div>
+        <p style="margin-left: 150px">{{ card.numarCard }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Stock</mat-label>
+    <mat-select
+      matNativeControl
+      [(value)]="stock"
+      (valueChange)="changeStock()"
+    >
+      <mat-option value="20">More than 20 Units</mat-option>
+      <mat-option value="50">More than 50 Units</mat-option>
+      <mat-option value="0">With Stock</mat-option>
+      <mat-option value="1000">Bigger than 1000</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="product-grid" *ngFor="let product of productStock">
+    <div class="product-row">
+      <p>{{ product.nume }}</p>
+      <input type="number" [(ngModel)]="product.unitati" />
+      <p>{{ product.unitati }}</p>
+      <p>{{ product.unitateMasura }}</p>
+      <button mat-button color="primary" (click)="updateStock(product)">
+        updateStock
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="container">
+  <div [formGroup]="loginForm" class="form-group">
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="Email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Parola" formControlName="Parola" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="loginUser()"
+      [disabled]="!this.loginForm.valid"
+    >
+      Submit
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="navigateRegister()"
+      e
+    >
+      Regiser
+    </button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.grid {
+  padding: 20px;
+  height: 50px;
+  width: 1000px;
+  font-size: 20px;
+}
+.container {
+  margin-top: 20px;
+  width: 500px;
+}
+.item {
+  margin: 10px;
+  border: 2px purple solid;
+  border-radius: 5px;
+  padding: 5px;
+}
+.page {
+  padding: 1px;
+}
+.r1 {
+  display: flex;
+  gap: 50px;
+}

@@ -1,0 +1,76 @@
+.cart-card {
+  background-color: whitesmoke;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.main-body {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 70% 29%;
+  height: auto;
+  padding: 10px;
+  background-color: white;
+}
+img {
+  width: 100px;
+  height: 80px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 200px;
+  height: 250px;
+  gap: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  background-color: #f1f1f1;
+}
+.grid {
+  height: 600px;
+}
+.title {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: larger;
+}
+.tip {
+  font-family: "Courier New", Courier, monospace;
+}
+.add {
+  border-radius: 20px;
+  background-color: purple;
+  size: 40px;
+}
+.cart-item {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 10px;
+  border: 2px black solid;
+  justify-content: center;
+  padding: 10px;
+}
+.filter-input {
+  width: 300px;
+  margin-left: 200px;
+  height: 25px;
+  margin-right: 30px;
+}
+.remove-item {
+  position: relative;
+  left: 200px;
+  top: -100px;
+  margin-left: 5px;
+}
+.update-item {
+  position: relative;
+  left: 160px;
+  top: -100px;
+}
+.cat-select {
+  margin-top: 20px;
+}

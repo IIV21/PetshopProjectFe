@@ -1,0 +1,54 @@
+<div class="container">
+  <div [formGroup]="registerForm" class="form-group">
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" formControlName="Email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Parola"
+        formControlName="Parola"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Nume</mat-label>
+      <input matInput placeholder="Nume" formControlName="Nume" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Prenume</mat-label>
+      <input matInput placeholder="Prenume" formControlName="Prenume" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>CNP</mat-label>
+      <input type="text" matInput placeholder="CNP" formControlName="CNP" />
+    </mat-form-field>
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Telefon</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Telefon"
+        formControlName="Telefon"
+      />
+    </mat-form-field>
+    <mat-form-field appearance="fill" [floatLabel]="'auto'">
+      <mat-label>Adresa</mat-label>
+      <input matInput placeholder="Adresa" formControlName="Adresa" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="registerUser()"
+      [disabled]="!this.registerForm.valid"
+    >
+      Submit
+    </button>
+  </div>
+</div>

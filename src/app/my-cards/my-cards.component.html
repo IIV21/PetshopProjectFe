@@ -1,0 +1,31 @@
+<!-- Add icon library -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<div class="container">
+  <button class="delete" (click)="deleteUser()">Delete User</button>
+  <div class="card">
+    <img
+      src="https://media.istockphoto.com/id/1300845620/vector/user-icon-flat-isolated-on-white-background-user-symbol-vector-illustration.jpg?s=612x612&w=0&k=20&c=yBeyba0hUkh14_jgv1OKqIH0CCSWU_4ckRkAoy2p73o="
+      alt="John"
+      style="width: 100%"
+    />
+    <h1>{{ user.email }}</h1>
+    <p class="title">{{ user.nume }}</p>
+    <p>{{ user.telefon }}</p>
+    <a href="#"><i class="fa fa-dribbble"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <p><button>Contact</button></p>
+  </div>
+
+  <div class="row">
+    <div class="column" *ngFor="let card of cards">
+      <div class="item">Detinator: {{ card.detinator }}</div>
+      <div class="item">{{ card.numarCard }}</div>
+      <div class="item">CVV:{{ card.cvv }}</div>
+    </div>
+  </div>
+</div>
